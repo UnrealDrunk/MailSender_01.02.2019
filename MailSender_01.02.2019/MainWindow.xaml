@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa ="http://schemas.fontawesome.io/icons/"
+        xmlns:data="clr-namespace:MailSender.lib.Data;assembly=MailSender.lib"
+        xmlns:entities="clr-namespace:MailSender.lib.Entities;assembly=MailSender.lib"
         xmlns:local="clr-namespace:MailSender_01._02._2019"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
@@ -31,8 +33,11 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
                     <ToolBarTray>
-                        <ToolBar Header="Отправители">
-                            <ComboBox Width="150"/>
+                        <ToolBar Header="Отправители" >
+                            <ComboBox Width="150" Name="SenderList"
+                                 ItemsSource="{x:Static data:TestData.Senders}" 
+                                      DisplayMemberPath="Name"
+                                      SelectedIndex="0"/>
                             <Button ToolTip="Добавить">
                                 <Image Height="16" Source="Media/add.png"/>
                             </Button>
@@ -44,7 +49,25 @@
                             </Button>
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1" BandIndex="0">
-                            <ComboBox Width="150"/>
+                            <ComboBox Width="150"
+                                      ItemsSource="{x:Static data:TestData.Servers}" 
+                                      SelectedIndex="0">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate DataType="entities:Server">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Name}" FontWeight="Bold"/>
+                                            <TextBlock> </TextBlock>
+                                            <TextBlock Text="{Binding Adress}" Opacity="0.6">
+                                                <TextBlock.ToolTip>
+                                                    <TextBlock Text="{Binding Port, StringFormat=Port:{0}}"/>
+                                                </TextBlock.ToolTip>
+                                            </TextBlock>
+                                            <TextBlock Opacity="0.6">:</TextBlock>
+                                            <!--<TextBlock Text ="{Binding Port}" Opacity="0.6"/>-->
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                             <Button ToolTip="Добавить">
                                 <fa:ImageAwesome Height="12" Icon="Plus" Foreground="DarkBlue"/>
                             </Button>
