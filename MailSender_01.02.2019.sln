@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test2_XamlWindowElems", "Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.lib", "MailSender.lib\MailSender.lib.csproj", "{C2057098-AF3C-4D6A-9149-91C9788225C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToSqlTest", "LinqToSqlTest\LinqToSqlTest.csproj", "{E9D1F2B2-1674-440F-96C0-BD47D683D5E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{C2057098-AF3C-4D6A-9149-91C9788225C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2057098-AF3C-4D6A-9149-91C9788225C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2057098-AF3C-4D6A-9149-91C9788225C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9D1F2B2-1674-440F-96C0-BD47D683D5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9D1F2B2-1674-440F-96C0-BD47D683D5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9D1F2B2-1674-440F-96C0-BD47D683D5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9D1F2B2-1674-440F-96C0-BD47D683D5E1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
