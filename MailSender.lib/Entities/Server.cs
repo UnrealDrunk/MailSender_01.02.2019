@@ -15,7 +15,7 @@ namespace MailSender.lib.Entities
 
         public string Adress { get; set; }
 
-        public string Port { get; set; }
+        public int Port { get; set; }
 
         public bool UseSSL { get; set; }
 
