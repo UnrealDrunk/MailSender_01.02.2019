@@ -43,5 +43,26 @@ namespace MailSender_01._02._2019
             mailSender.Send(MailHeader.Text, MailBody.Text, sender.Adress, recipient.Adress);
             
         }
+
+        private void OnSenderEditClick(object Sender, RoutedEventArgs e)
+        {
+            var sender = SenderList.SelectedItem as Sender;
+            if (sender is null) return;
+
+            var dialog = new SenderEditor(sender, this);
+
+            if (dialog.ShowDialog() != true) return;
+
+            // Внести изменения в sender
+
+            sender.Name = dialog.NameValue;
+            sender.Adress = dialog.AddressValue;
+
+        }
+
+
+
+
+
     }
 }

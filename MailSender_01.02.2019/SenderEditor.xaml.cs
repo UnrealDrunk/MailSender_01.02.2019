@@ -11,17 +11,43 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MailSender.lib.Entities;
 
 namespace MailSender_01._02._2019
 {
-    /// <summary>
-    /// Логика взаимодействия для SenderEditor.xaml
-    /// </summary>
-    public partial class SenderEditor : Window
+
+    public partial class SenderEditor
     {
-        public SenderEditor()
+        private MainWindow MainWindow;
+
+        public string NameValue { get => NameEditor.Text; set => NameEditor.Text = value; }
+        public string AddressValue { get => AddressEditor.Text; set => AddressEditor.Text = value; }
+
+        public SenderEditor(Sender Sender, MainWindow mainWindow)
         {
             InitializeComponent();
+            NameValue = Sender.Name;
+            AddressValue = Sender.Adress;
+            MainWindow = mainWindow;
+        }
+
+       
+
+        private void OnOkButtonClick(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+            Close();
+        }
+
+        private void OnCancelButtonClick(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
+            Close();
+        }
+
+        private void OnCloseMainWindowClick(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Title += " Hello World!!!";
         }
     }
 }
