@@ -16,12 +16,14 @@ using System.Net.Mail;
 using System.Net;
 using System.Security;
 
+
 namespace Test_MailSender
 {
   
     public partial class MainWindow : Window
     {
         public MainWindow() => InitializeComponent();
+         
 
     }
 }

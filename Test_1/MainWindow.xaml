@@ -5,9 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Test_MailSender"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="520" Width="880">
+        xmlns:vm="clr-namespace:Test_1.ViewModels"
+        Title="{Binding Title}" Height="600" Width="900">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
-      
+        <StackPanel>
+            <TextBlock Text="{Binding TitleLength}"/>
+            <TextBox Text="{Binding TestValue}" HorizontalAlignment="Left" Width="300"/>
+            <TextBox Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Width="300"/>
+            <Slider Minimum="0" Maximum="360" Value="{Binding TestValue}"/>
+            <Slider Minimum="0" Maximum="500" Value="{Binding X}"/>
+            <Slider Minimum="0" Maximum="500" Value="{Binding Y}"/>
+            
+        </StackPanel>
+        <Ellipse Margin="250, 184,300,228" Fill="Aquamarine" Stroke="Red" StrokeThickness="8">
+            <Ellipse.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="{Binding TestValue}"/>
+                    <TranslateTransform X="{Binding X}" Y="{Binding Y}"/>
+
+                </TransformGroup>
+            </Ellipse.RenderTransform>
+        </Ellipse>
     </Grid>
 </Window>
