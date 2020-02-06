@@ -16,6 +16,16 @@ namespace MailSender.lib.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
+
+        private string _Title = "Рассыльщик почты";
+        public string Title
+        {
+            get => _Title;
+            set => Set(ref _Title, value);
+        }
+
+
+
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
