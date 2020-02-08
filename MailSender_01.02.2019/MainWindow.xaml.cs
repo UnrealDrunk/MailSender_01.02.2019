@@ -30,17 +30,17 @@ namespace MailSender_01._02._2019
 
         private void OnSendButtonClick(object Sender, RoutedEventArgs e)
         {
-            var recipient = RecipientsList.SelectedItem as Recipients;
-            var sender = SenderList.SelectedItem as Sender;
-            var server = ServersList.SelectedItem as Server;
+            //var recipient = RecipientsList.SelectedItem as Recipients;
+            //var sender = SenderList.SelectedItem as Sender;
+            //var server = ServersList.SelectedItem as Server;
 
-            if (recipient is null || server is null || sender is null)
-                return;
+            //if (recipient is null || server is null || sender is null)
+            //    return;
 
-            var mailSender = new MailSender.lib.Services.DebugMailSender(server.Adress, server.Port, server.UseSSL,
-                server.Login, server.Password.Decode(3));
+            //var mailSender = new MailSender.lib.Services.DebugMailSender(server.Adress, server.Port, server.UseSSL,
+            //    server.Login, server.Password.Decode(3));
 
-            mailSender.Send(MailHeader.Text, MailBody.Text, sender.Adress, recipient.Adress);
+            //mailSender.Send(MailHeader.Text, MailBody.Text, sender.Adress, recipient.Adress);
             
         }
 

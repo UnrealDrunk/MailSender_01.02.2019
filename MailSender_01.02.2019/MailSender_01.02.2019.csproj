@@ -61,6 +61,9 @@
     <Compile Include="SenderEditor.xaml.cs">
       <DependentUpon>SenderEditor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RecipientsView.xaml.cs">
+      <DependentUpon>RecipientsView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -74,6 +77,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SenderEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RecipientsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -117,6 +124,9 @@
       <Project>{c2057098-af3c-4d6a-9149-91c9788225c2}</Project>
       <Name>MailSender.lib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
