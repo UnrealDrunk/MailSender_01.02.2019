@@ -35,7 +35,14 @@ namespace MailSender.lib.ViewModel
             get => _Recipients;
             private set => Set(ref _Recipients, value);
         }
-    
+
+        private Recipients _SelectedRecipient;
+
+        public Recipients SelectedRecipient
+        {
+            get => _SelectedRecipient;
+            set => Set(ref _SelectedRecipient, value);
+        }
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
