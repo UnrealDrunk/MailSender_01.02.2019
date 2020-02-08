@@ -61,6 +61,9 @@
     <Compile Include="SenderEditor.xaml.cs">
       <DependentUpon>SenderEditor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\RecipientEditor.xaml.cs">
+      <DependentUpon>RecipientEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\RecipientsView.xaml.cs">
       <DependentUpon>RecipientsView.xaml</DependentUpon>
     </Compile>
@@ -77,6 +80,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="SenderEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RecipientEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
