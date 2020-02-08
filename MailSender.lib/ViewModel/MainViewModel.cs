@@ -1,4 +1,7 @@
 using GalaSoft.MvvmLight;
+using MailSender.lib.Services;
+using MailSender.lib.Entities;
+using System.Collections.ObjectModel;
 
 namespace MailSender.lib.ViewModel
 {
@@ -16,6 +19,7 @@ namespace MailSender.lib.ViewModel
     /// </summary>
     public class MainViewModel : ViewModelBase
     {
+        private readonly RecipientsManager _RecipientsManager;
 
         private string _Title = "Рассыльщик почты";
         public string Title
@@ -24,12 +28,19 @@ namespace MailSender.lib.ViewModel
             set => Set(ref _Title, value);
         }
 
+        private ObservableCollection<Recipients> _Recipients = new ObservableCollection<Recipients>();
 
+         public ObservableCollection<Recipients> Recipients
+        {
+            get => _Recipients;
+            private set => Set(ref _Recipients, value);
+        }
+    
 
         /// <summary>
         /// Initializes a new instance of the MainViewModel class.
         /// </summary>
-        public MainViewModel()
+        public MainViewModel(RecipientsManager RecipientsManager)
         {
             ////if (IsInDesignMode)
             ////{
@@ -39,6 +50,12 @@ namespace MailSender.lib.ViewModel
             ////{
             ////    // Code runs "for real"
             ////}
+            ///
+
+            _RecipientsManager = RecipientsManager;
+
+            _Recipients = new ObservableCollection<Recipients>(_RecipientsManager.GetAll());
+
         }
     }
 }
