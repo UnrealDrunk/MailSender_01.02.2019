@@ -24,5 +24,10 @@ namespace MailSender_01._02._2019.Views
         {
             InitializeComponent();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

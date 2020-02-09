@@ -27,6 +27,14 @@ namespace MailSender_01._02._2019.ViewModel
             private set => Set(ref _Recipients, value);
         }
 
+        private Recipients _SelectedRecipient;
+
+        public Recipients SelectedRecipient
+        {
+            get => _SelectedRecipient;
+            set => Set(ref _SelectedRecipient, value);
+        }
+
 
         public MainViewModel(RecipientsManager RecipientsManager)
         {

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MailSender_01._02._2019.Views"
              mc:Ignorable="d" 
+             DataContext="{Binding Main, Source={StaticResource Locator}}"
              d:DesignHeight="450" d:DesignWidth="800">
     <DockPanel Margin="3">
         <TextBlock HorizontalAlignment="Center"
@@ -15,14 +16,15 @@
         </DockPanel>
         <Button DockPanel.Dock="Bottom" HorizontalAlignment="Center" 
                 Padding="40,5" Margin="0,5,0,10">Обновить</Button>
-        <DataGrid ItemsSource="{Binding Main.Recipients, Source={StaticResource Locator}}"
+        <DataGrid ItemsSource="{Binding Recipients}"
+                                  SelectedItem="{Binding SelectedRecipient}"
                                   AutoGenerateColumns="False"
                                   IsReadOnly="True"
                                   VerticalGridLinesBrush="Gray"
                                   GridLinesVisibility="Vertical"
                                   AlternatingRowBackground="LightGray">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id"/>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
                 <DataGridTextColumn Header="Имя" Binding="{Binding Name}"  Width="*"/>
                 <DataGridTextColumn Header="Адрес" Binding="{Binding Adress}" />
             </DataGrid.Columns>
