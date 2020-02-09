@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MailSender.lib.Entities;
+using MailSender.lib.Services.Iterfaces2;
 
 namespace MailSender.lib.Services
 {
-    public class RecipientsManager
+    public class RecipientsManager : IrecipientManager
     {
         private RecipientsStoreInMemory _Store;
 
