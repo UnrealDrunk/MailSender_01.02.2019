@@ -10,9 +10,9 @@ namespace MailSender.lib.Services
 {
     public class RecipientsManager : IrecipientManager
     {
-        private RecipientsStoreInMemory _Store;
+        private IRecipientsStore _Store;
 
-        public RecipientsManager(RecipientsStoreInMemory Store)
+        public RecipientsManager(IRecipientsStore Store)
         {
             _Store = Store;
         }

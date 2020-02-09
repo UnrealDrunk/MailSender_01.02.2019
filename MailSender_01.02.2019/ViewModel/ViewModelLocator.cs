@@ -4,6 +4,7 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using CommonServiceLocator;
 using MailSender.lib.Services;
+using MailSender.lib.Services.Iterfaces2;
 
 namespace MailSender_01._02._2019.ViewModel
 {
@@ -31,8 +32,8 @@ namespace MailSender_01._02._2019.ViewModel
 
             services.Register<MainViewModel>();
 
-            services.Register<RecipientsManager>();
-            services.Register<RecipientsStoreInMemory>();
+            services.Register<IrecipientManager, RecipientsManager>();
+            services.Register<IRecipientsStore, RecipientsStoreInMemory>();
         }
 
         public MainViewModel Main

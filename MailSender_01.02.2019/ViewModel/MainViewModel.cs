@@ -4,13 +4,14 @@ using MailSender.lib.Entities;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
 using GalaSoft.MvvmLight.CommandWpf;
+using MailSender.lib.Services.Iterfaces2;
 
 namespace MailSender_01._02._2019.ViewModel
 {
  
     public class MainViewModel : ViewModelBase
     {
-        private readonly RecipientsManager _RecipientsManager;
+        private readonly IrecipientManager _RecipientsManager;
 
         private string _Title = "Mail Sender";
 
@@ -46,7 +47,7 @@ namespace MailSender_01._02._2019.ViewModel
         #endregion
 
 
-        public MainViewModel(RecipientsManager RecipientsManager)
+        public MainViewModel(IrecipientManager RecipientsManager)
         {
 
             LoadRecipientsDataCommand = new RelayCommand(OnLoadRecipientDataCommandExecuted,

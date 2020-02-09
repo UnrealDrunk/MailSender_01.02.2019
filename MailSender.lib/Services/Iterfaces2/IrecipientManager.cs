@@ -7,7 +7,7 @@ using MailSender.lib.Entities;
 
 namespace MailSender.lib.Services.Iterfaces2
 {
-    interface IrecipientManager
+    public interface IrecipientManager
     {
         IEnumerable<Recipients> GetAll();
 

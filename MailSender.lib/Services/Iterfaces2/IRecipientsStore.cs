@@ -7,7 +7,7 @@ using MailSender.lib.Entities;
 
 namespace MailSender.lib.Services.Iterfaces2
 {
-    interface IRecipientsStore
+    public interface IRecipientsStore
     {
         IEnumerable<Recipients> Get();
 
