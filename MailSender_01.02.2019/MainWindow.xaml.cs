@@ -60,9 +60,9 @@ namespace MailSender_01._02._2019
 
         }
 
+        private void RecipientsView_Loaded(object sender, RoutedEventArgs e)
+        {
 
-
-
-
+        }
     }
 }
