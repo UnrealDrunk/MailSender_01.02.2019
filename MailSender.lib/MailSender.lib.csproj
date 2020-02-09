@@ -48,7 +48,12 @@
     <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\MailSender.cs" />
+    <Compile Include="Services\RecipientsManager.cs" />
+    <Compile Include="Services\RecipientsStoreInMemory.cs" />
     <Compile Include="Service\TextEncoder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Services\Iterfaces2\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

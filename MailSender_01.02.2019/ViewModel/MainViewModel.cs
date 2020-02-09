@@ -1,10 +1,14 @@
 using GalaSoft.MvvmLight;
+using MailSender.lib.Services;
+using MailSender.lib.Entities;
+using System.Collections.ObjectModel;
 
 namespace MailSender_01._02._2019.ViewModel
 {
  
     public class MainViewModel : ViewModelBase
     {
+        private readonly RecipientsManager _RecipientsManager;
 
         private string _Title = "Mail Sender";
 
@@ -15,18 +19,21 @@ namespace MailSender_01._02._2019.ViewModel
             set => Set(ref _Title, value);
         }
 
-        public MainViewModel()
-        {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
-            ///
+        public ObservableCollection<Recipients> _Recipients;
 
+        public ObservableCollection<Recipients> Recipients
+        {
+            get => _Recipients;
+            private set => Set(ref _Recipients, value);
+        }
+
+
+        public MainViewModel(RecipientsManager RecipientsManager)
+        {
+
+            _RecipientsManager = RecipientsManager;
+
+            _Recipients = new ObservableCollection<Recipients>(_RecipientsManager.GetAll());
 
         }
     }
