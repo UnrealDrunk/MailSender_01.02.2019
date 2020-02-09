@@ -12,23 +12,22 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Net.Mail;
-using System.Net;
-using System.Security;
-//using Test_1.ViewModels;
 
-namespace Test_MailSender
+namespace MailSender_01._02._2019.Views
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для RecipientEditor.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class RecipientEditor : UserControl
     {
-        public MainWindow()
+        public RecipientEditor()
         {
             InitializeComponent();
-            //DataContext = new MainWindowViewModel();
         }
 
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
