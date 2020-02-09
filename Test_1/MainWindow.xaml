@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xckt="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:local="clr-namespace:Test_MailSender"
         mc:Ignorable="d"
         Title="MainWindow" Height="520" Width="880">
@@ -21,6 +22,10 @@
                    HorizontalAlignment="Left" VerticalAlignment="Top" />
         <TextBlock Margin="435,135,0,0" Text="Пароль" TextWrapping="Wrap" Width="120"
                    HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <xckt:ColorPicker VerticalAlignment="Top"
+                          HorizontalAlignment="Left" Width="458" Margin="70,53,0,0">
+            
+        </xckt:ColorPicker>
 
     </Grid>
 </Window>
