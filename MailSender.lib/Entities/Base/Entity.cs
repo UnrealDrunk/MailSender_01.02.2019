@@ -3,15 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MailSender.lib.Entities.Base;
 
-namespace MailSender.lib.Entities
+namespace MailSender.lib.Entities.Base
 {
-    public class Recipients: PersonEntity
+    public abstract class BaseEntity
     {
-
-
-
+        public int Id { get; set; }
 
     }
 

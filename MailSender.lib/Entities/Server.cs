@@ -3,17 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MailSender.lib.Entities.Base;
 
 namespace MailSender.lib.Entities
 {
     /// <summary>
     /// Почтовый сервер
     /// </summary>
-    public class Server
+    public class Server: NamedEntity
     {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
 
         public string Adress { get; set; }
 

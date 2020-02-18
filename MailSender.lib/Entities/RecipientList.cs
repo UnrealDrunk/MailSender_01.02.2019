@@ -7,12 +7,11 @@ using MailSender.lib.Entities.Base;
 
 namespace MailSender.lib.Entities
 {
-    public class Recipients: PersonEntity
+    public class MailingList: NamedEntity
     {
-
-
-
+        public ICollection<Recipients> Recipients { get; set; } = new List<Recipients>();
 
     }
+
 
 }

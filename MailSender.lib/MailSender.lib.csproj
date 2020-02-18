@@ -42,7 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\TestData.cs" />
+    <Compile Include="Entities\Base\Entity.cs" />
+    <Compile Include="Entities\Base\NamedEntity.cs" />
+    <Compile Include="Entities\Base\PersonEntity.cs" />
+    <Compile Include="Entities\Mail.cs" />
+    <Compile Include="Entities\RecipientList.cs" />
     <Compile Include="Entities\Recipients.cs" />
+    <Compile Include="Entities\SchedulerTask.cs" />
     <Compile Include="Entities\Sender.cs" />
     <Compile Include="Entities\Server.cs" />
     <Compile Include="MVVM\LambdaCommand.cs" />
