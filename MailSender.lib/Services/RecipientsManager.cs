@@ -20,7 +20,7 @@ namespace MailSender.lib.Services
 
         public IEnumerable<Recipients> GetAll()
         {
-            return _Store.Get();
+            return _Store.GetAll();
         }
 
 
