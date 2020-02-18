@@ -54,11 +54,17 @@
     <Compile Include="MVVM\LambdaCommand.cs" />
     <Compile Include="MVVM\ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Iterfaces2\IDataStore.cs" />
+    <Compile Include="Services\Iterfaces2\IMailingListStore.cs" />
+    <Compile Include="Services\Iterfaces2\IMailStore.cs" />
     <Compile Include="Services\Iterfaces2\IrecipientManager.cs" />
     <Compile Include="Services\Iterfaces2\IRecipientsStore.cs" />
+    <Compile Include="Services\Iterfaces2\ISchedulerTaskStore.cs" />
+    <Compile Include="Services\Iterfaces2\ISenderStore.cs" />
+    <Compile Include="Services\Iterfaces2\IServersStore.cs" />
     <Compile Include="Services\MailSender.cs" />
     <Compile Include="Services\RecipientsManager.cs" />
-    <Compile Include="Services\RecipientsStoreInMemory.cs" />
+    <Compile Include="Services\InMemory\RecipientsStoreInMemory.cs" />
     <Compile Include="Service\TextEncoder.cs" />
   </ItemGroup>
   <ItemGroup />

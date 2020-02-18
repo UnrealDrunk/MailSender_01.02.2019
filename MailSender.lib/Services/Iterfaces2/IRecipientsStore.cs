@@ -7,18 +7,7 @@ using MailSender.lib.Entities;
 
 namespace MailSender.lib.Services.Iterfaces2
 {
-    public interface IRecipientsStore
-    {
-        IEnumerable<Recipients> GetAll();
 
-        Recipients GetById(int id);
+    public interface IRecipientsStore: IDataStore<Recipients>{ }
 
-        int Create(Recipients Recipient);
-
-        void Edit(int id, Recipients Recipient);
-
-        Recipients Remove(int id);
-
-        void SaveChanges();
-    }
 }
