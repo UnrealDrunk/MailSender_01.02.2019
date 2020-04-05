@@ -25,9 +25,14 @@ namespace MailSender_01._02._2019.Views
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void OnDataValidationError(object sender, ValidationErrorEventArgs e)
         {
+            if (!(e.Source is Control control)) return;
 
+            if (e.Action == ValidationErrorEventAction.Added)
+                control.ToolTip = e.Error.ErrorContent.ToString();
+            else
+                control.ClearValue(ToolTipProperty);
         }
     }
 }
