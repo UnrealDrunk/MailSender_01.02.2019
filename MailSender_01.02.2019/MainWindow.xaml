@@ -38,13 +38,14 @@
                     <ToolBarTray>
                         <ToolBar Header="Отправители" >
                             <ComboBox Width="150" Name="SenderList"
-                                 ItemsSource="{x:Static data:TestData.Senders}" 
+                                 ItemsSource="{Binding Senders}" 
+                                      SelectedItem="{Binding SelectedSender}"
                                       DisplayMemberPath="Name"
                                       SelectedIndex="0"/>
                             <Button ToolTip="Добавить" Click="OnSenderEditClick">
                                 <Image Height="16" Source="Media/add.png"/>
                             </Button>
-                            <Button ToolTip="Редактировать">
+                            <Button ToolTip="Редактировать" Command="{Binding SenderEditCommand}" CommandParameter="{Binding SelectedSender}">
                                 <Image Height="16" Source="Media/edit.png"/>
                             </Button>
                             <Button ToolTip="Удалить">
@@ -53,7 +54,8 @@
                         </ToolBar>
                         <ToolBar Header="Сервера" Band="1" BandIndex="0">
                             <ComboBox Width="150" Name="ServersList"
-                                      ItemsSource="{x:Static data:TestData.Servers}" 
+                                      ItemsSource="{Binding Servers}"
+                                      SelectedItem="{Binding SelectedServer}"
                                       SelectedIndex="0">
                                 <ComboBox.ItemTemplate>
                                     <DataTemplate DataType="entities:Server">
@@ -184,24 +186,42 @@
                                 <Button Content="Add"/>
                                 <Button Content="Delete"/>
                             </UniformGrid>
-                            <ListBox>
-                                <ListBoxItem>Письмо 1</ListBoxItem>
-                                <ListBoxItem>Письмо 2</ListBoxItem>
-                                <ListBoxItem>Письмо 3</ListBoxItem>
-                                <ListBoxItem>Письмо 4</ListBoxItem>
+                            <ListBox ItemsSource="{Binding Mails}" SelectedItem="{Binding SelectedMail}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate DataType="Entities:Mail">
+                                        <TextBlock Text="{Binding Subject}"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
                             </ListBox>
                         </DockPanel>
                     </GroupBox>
-                    <GroupBox Header="Выбранное письмо" Grid.Column="1">
+                    <GroupBox Header="Выбранное письмо" Grid.Column="1" DataContext="{Binding SelectedMail}">
                         <DockPanel>
                             <GroupBox DockPanel.Dock="Top" Header="Тема письма">
-                                <TextBox Text="Текст заголовка письма" Name="MailHeader"/>
+                                <TextBox Text="{Binding Subject, TargetNullValue='[Тема письма]'}" Name="MailHeader"/>
                             </GroupBox>
                             <GroupBox Header="Текст письма">
-                                <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="MailBody">Текст тела письма</TextBox>
+                                <TextBox TextWrapping="Wrap" AcceptsReturn="True" Name="MailBody" Text="{Binding Body}">
+                                    <TextBox.Style>
+                                        <Style TargetType="TextBox">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Text, RelativeSource={RelativeSource Self} }" Value="">
+                                                    <Setter Property="Template">
+                                                        <Setter.Value>
+                                                            <ControlTemplate TargetType="TextBox">
+                                                                <TextBox>Тело письма</TextBox>
+                                                            </ControlTemplate>
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBox.Style>
+                                </TextBox>
                             </GroupBox>
                         </DockPanel>
                     </GroupBox>
+                    <GridSplitter Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Stretch" Width="4" Background="Transparent"/>
                 </Grid>
             </TabItem>
         </TabControl>
