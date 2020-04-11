@@ -16,6 +16,7 @@ namespace MailSender_01._02._2019.Infrastructure.Services
         {
             var current_main_window = (MainWindow)Application.Current.MainWindow;
             var editor = new SenderEditor(sender, current_main_window);
+            editor.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             editor.Owner = current_main_window;
             if (editor.ShowDialog() != true) return;
             sender.Name = editor.Name;
