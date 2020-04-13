@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqToSqlTest", "LinqToSqlT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MailSender.lib.Tests", "MailSender.lib.Tests\MailSender.lib.Tests.csproj", "{DABFE5F4-1E9C-4920-8040-DEB5D8D3D387}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole", "TestConsole\TestConsole.csproj", "{A35E3554-BD1C-428B-B0C9-2E9C33341324}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConsole2", "TestConsole2\TestConsole2.csproj", "{863A180A-8329-43B2-8699-FA3D28F50397}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,10 +47,10 @@ Global
 		{DABFE5F4-1E9C-4920-8040-DEB5D8D3D387}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DABFE5F4-1E9C-4920-8040-DEB5D8D3D387}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DABFE5F4-1E9C-4920-8040-DEB5D8D3D387}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A35E3554-BD1C-428B-B0C9-2E9C33341324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A35E3554-BD1C-428B-B0C9-2E9C33341324}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A35E3554-BD1C-428B-B0C9-2E9C33341324}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A35E3554-BD1C-428B-B0C9-2E9C33341324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{863A180A-8329-43B2-8699-FA3D28F50397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{863A180A-8329-43B2-8699-FA3D28F50397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{863A180A-8329-43B2-8699-FA3D28F50397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{863A180A-8329-43B2-8699-FA3D28F50397}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

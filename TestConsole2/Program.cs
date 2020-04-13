@@ -2,25 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 
-namespace TestConsole
+namespace TestConsole2
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-
             //ThreadTests.Start();
-            //ThreadPoolTests.Start();
+            ThreadPoolTests.Start();
+
+            Console.ReadLine();
             Console.WriteLine("Приложение должно быть закрыто");
 
         }
-
-
-
     }
-
 }
