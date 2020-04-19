@@ -11,8 +11,9 @@ namespace TestConsole2
         static void Main(string[] args)
         {
             //ThreadTests.Start();
-            ThreadPoolTests.Start();
+            //ThreadPoolTests.Start();
 
+            SynchronizationTests.Start();
             Console.ReadLine();
             Console.WriteLine("Приложение должно быть закрыто");
 
