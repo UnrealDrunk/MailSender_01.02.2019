@@ -7,6 +7,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Security;
 using MailSender.lib.Entities;
+using System.Threading;
 
 namespace MailSender.lib.Services
 {
@@ -31,6 +32,26 @@ namespace MailSender.lib.Services
                
             }
         }
+
+        public void Send(Mail Message, Sender From, IEnumerable<Recipients> To)
+        {
+            foreach(var recipient in To)
+            {
+                Send(Message, From, recipient);
+            }
+        }
+
+
+        public void SendParallel(Mail Message, Sender From, IEnumerable<Recipients> To)
+        {
+            foreach (var recipient in To)
+            {
+                ThreadPool.QueueUserWorkItem(_ => Send(Message, From, recipient));
+            }
+        }
+
+
+
     }
 
 
