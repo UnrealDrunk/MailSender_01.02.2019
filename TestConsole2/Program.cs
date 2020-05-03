@@ -54,21 +54,33 @@ namespace TestConsole2
             //    new ParallelOptions { MaxDegreeOfParallelism=3},
             //    Enumerable.Repeat(new Action(ParallelInvokeMethod), 100).ToArray());
 
-            //var messages = Enumerable.Range(1, 100).Select(i => $"Message {i:000}.").ToArray();
 
             //Parallel.For(0, 100,
             //    new ParallelOptions { MaxDegreeOfParallelism = 3},
             //    i => ParallelInvokeMethod($"Message {i}"));
 
-            var for_result = Parallel.For(0, 100,
-             new ParallelOptions { MaxDegreeOfParallelism = 3 },
-             (i, state) =>
-             {
-                 if (i > 15) state.Break();
-                 ParallelInvokeMethod($"Message {i}");
-             });
+            //var for_result = Parallel.For(0, 100,
+            // new ParallelOptions { MaxDegreeOfParallelism = 3 },
+            // (i, state) =>
+            // {
+            //     if (i > 15) state.Break();
+            //     ParallelInvokeMethod($"Message {i}");
+            // });
 
-            Console.WriteLine("Выполнилось {0} итераций", for_result.LowestBreakIteration);
+            //Console.WriteLine("Выполнилось {0} итераций", for_result.LowestBreakIteration);
+
+
+            var messages = Enumerable.Range(0, 100).Select(i => $"Message {i:000}");//.ToArray();
+            //Parallel.ForEach(messages, ParallelInvokeMethod);
+            //Parallel.ForEach(messages, s => ParallelInvokeMethod(s));
+            var foreach_result =  Parallel.ForEach(messages, (s, state) =>
+            {
+                if (s.EndsWith("20")) state.Break();
+                ParallelInvokeMethod(s);
+            } );
+
+            Console.WriteLine("Выполнилось {0} итераций", foreach_result.LowestBreakIteration);
+
             Console.ReadLine();
             Console.WriteLine("Приложение должно быть закрыто");
 
