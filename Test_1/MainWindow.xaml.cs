@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.Net.Mail;
 using System.Net;
 using System.Security;
+using System.Threading;
 //using Test_1.ViewModels;
 
 namespace Test_MailSender
@@ -30,5 +31,32 @@ namespace Test_MailSender
             //DataContext = new MainWindowViewModel();
         }
 
+        private void OnStartButtonClick(object sender, RoutedEventArgs e)
+        {
+            const string message = "Hello World!!!";
+            var result = GetMessageLength(message);
+            Result.Text = result.ToString();
+        }
+
+        private void OnCancelButtonClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private Task<int>GetMessageLengthAsync(string Message, int Timeout = 30)
+        {
+            return Task.Run(() => GetMessageLength(Message, Timeout));
+        }
+
+        private int _StartCount;
+        private int GetMessageLength(string Message, int Timeout = 30)
+        {
+            for (var i =0; i < 100; i++)
+            {
+                Thread.Sleep(Timeout);
+            }
+
+            return Message.Length + _StartCount++;
+        }
     }
 }
