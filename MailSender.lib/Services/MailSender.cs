@@ -52,6 +52,37 @@ namespace MailSender.lib.Services
 
 
 
+        public async Task SendAsync(Mail Mail, Sender From, Recipients To)
+        {
+            using (var message = new MailMessage(new MailAddress(From.Adress, From.Name),
+                new MailAddress(To.Adress, To.Name)))
+            {
+                message.Subject = Mail.Subject;
+                message.Body = Mail.Body;
+
+                var _login = new NetworkCredential(_Server.Login, _Server.Password);
+                using (var client = new SmtpClient(_Server.Adress, _Server.Port) { EnableSsl = _Server.UseSSL, Credentials = _login })
+                    //client.Send(message);
+                    await client.SendMailAsync(message).ConfigureAwait(false);
+
+            }
+        }
+
+        //public async Task SendAsync(Mail Message, Sender From, IEnumerable<Recipients> To)
+        //{
+        //    await Task.WhenAll(To.Select(to => SendAsync(Message, From, to))).ConfigureAwait(false);
+        //}
+
+        public async Task SendAsync(Mail Message, Sender From, IEnumerable<Recipients> To, CancellationToken Cancel = default)
+        {
+            foreach(var recipient in To)
+            {
+                Cancel.ThrowIfCancellationRequested();
+                await SendAsync(Message, From, recipient).ConfigureAwait(false);
+            }
+        }
+
+
     }
 
 
